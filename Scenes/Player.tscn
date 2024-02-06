@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Common/icon.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Player.cs" type="Script" id=2]
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="CylinderShape" id=2]
+radius = 2.0
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="PunchArea" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="PunchArea"]
+shape = SubResource( 2 )
+
+[node name="RayCast" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, -2000 )
+
+[node name="Camera" type="Camera" parent="."]
+current = true
+fov = 75.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+
+[node name="Punch" type="Sprite" parent="CanvasLayer/Control"]
+visible = false
+position = Vector2( 250, -256 )
+texture = ExtResource( 1 )
