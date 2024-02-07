@@ -39,3 +39,5 @@ anchor_bottom = 1.0
 visible = false
 position = Vector2( 250, -256 )
 texture = ExtResource( 1 )
+
+[node name="OmniLight" type="OmniLight" parent="."]

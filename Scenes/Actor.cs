@@ -7,19 +7,22 @@ public class Actor : RigidBody
     public Area Hitbox;
     public bool Hit = false;
 
-    private const float MoveSpeed = 5.0f;
+    private const float MoveSpeed = 2.0f;
     private NavigationAgent Nav;
+    private SpotLight Eye;
 
     public override void _Ready()
     {
         PlayerInstance = GetNode<Player>("/root/Level/Player");
         Nav = GetNode<NavigationAgent>("NavigationAgent");
         Hitbox = GetNode<Area>("Hitbox");
+        Eye = GetNode<SpotLight>("SpotLight");
     }
 
     public override void _PhysicsProcess(float delta)
     {
-        Hitbox.GlobalTranslation = GlobalTranslation;
+        // Eye.LookAt(GlobalTransform.origin + LinearVelocity, Vector3.Up);
+
         if (PlayerInstance != null && !Hit)
         {
             SetMovementTarget(PlayerInstance.GlobalTranslation);
@@ -36,6 +39,7 @@ public class Actor : RigidBody
     private void SetMovementTarget(Vector3 movementTarget)
     {
         Nav.SetTargetLocation(movementTarget);
+        Eye.LookAt(movementTarget, Vector3.Up);
     }
 
     private void _OnVelocityComputed(Vector3 safeVelocity)
