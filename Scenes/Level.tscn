@@ -36,3 +36,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6793, 1.05126, 18.4096 )
 
 [node name="Actor" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3946, 1.3, 3.28321 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.0274505, 0, 0.999623, 0, 1, 0, -0.999623, 0, 0.0274505, 16.4431, 0, 12.7266 )
+light_color = Color( 1, 0, 0, 1 )
+shadow_enabled = true
+spot_range = 10.547
+spot_attenuation = 0.026278
+spot_angle = 7.45459
+spot_angle_attenuation = 477.713

@@ -22,7 +22,7 @@ public class Actor : RigidBody
     public override void _PhysicsProcess(float delta)
     {
         // Eye.LookAt(GlobalTransform.origin + LinearVelocity, Vector3.Up);
-
+        GD.Print(Eye.GlobalTranslation, Eye.GlobalRotation);
         if (PlayerInstance != null && !Hit)
         {
             SetMovementTarget(PlayerInstance.GlobalTranslation);
