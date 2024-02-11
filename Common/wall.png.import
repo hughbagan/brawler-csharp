@@ -2,12 +2,13 @@
 
 importer="image"
 type="Image"
-path="res://.import/wall.png-5a88e2c9a275df4c4ac43966be014e1c.image"
+uid="uid://bab8eavd2dfgm"
+path="res://.godot/imported/wall.png-5a88e2c9a275df4c4ac43966be014e1c.image"
 
 [deps]
 
 source_file="res://Common/wall.png"
-dest_files=[ "res://.import/wall.png-5a88e2c9a275df4c4ac43966be014e1c.image" ]
+dest_files=["res://.godot/imported/wall.png-5a88e2c9a275df4c4ac43966be014e1c.image"]
 
 [params]
 

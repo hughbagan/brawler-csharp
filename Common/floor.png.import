@@ -2,12 +2,13 @@
 
 importer="image"
 type="Image"
-path="res://.import/floor.png-f83d9c6d18030921ccf43d1caa7247d3.image"
+uid="uid://d1soatbjqay5b"
+path="res://.godot/imported/floor.png-f83d9c6d18030921ccf43d1caa7247d3.image"
 
 [deps]
 
 source_file="res://Common/floor.png"
-dest_files=[ "res://.import/floor.png-f83d9c6d18030921ccf43d1caa7247d3.image" ]
+dest_files=["res://.godot/imported/floor.png-f83d9c6d18030921ccf43d1caa7247d3.image"]
 
 [params]
 

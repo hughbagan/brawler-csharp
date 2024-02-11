@@ -1,21 +1,21 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Actor.cs" type="Script" id=1]
-[ext_resource path="res://Common/guywalking.png" type="Texture" id=2]
+[ext_resource path="res://Common/guywalking.png" type="Texture2D" id=2]
 
-[sub_resource type="SphereShape" id=1]
+[sub_resource type="SphereShape3D" id=1]
 
-[sub_resource type="SphereShape" id=2]
+[sub_resource type="SphereShape3D" id=2]
 radius = 1.8
 
-[node name="Actor" type="RigidBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
-contacts_reported = 10
+[node name="Actor" type="RigidBody3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0 )
+max_contacts_reported = 10
 contact_monitor = true
 angular_damp = 5.0
 script = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -28,16 +28,16 @@ texture = ExtResource( 2 )
 hframes = 5
 vframes = 2
 
-[node name="Hitbox" type="Area" parent="."]
+[node name="Hitbox" type="Area3D" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Hitbox"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource( 2 )
 
-[node name="NavigationAgent" type="NavigationAgent" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 radius = 0.5
 
-[node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.2 )
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.2 )
 light_color = Color( 1, 0, 0, 1 )
 light_energy = 10.0
 shadow_enabled = true
@@ -46,4 +46,4 @@ spot_attenuation = 0.129408
 spot_angle = 20.0
 spot_angle_attenuation = 100.0
 
-[connection signal="velocity_computed" from="NavigationAgent" to="." method="_OnVelocityComputed"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_OnVelocityComputed"]
